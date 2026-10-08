@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Abdullah Al Zabir, PhD researcher in Agribusiness Management at the Asian Institute of Technology. Research on farmer behavior, climate adaptation and food security in Bangladesh.">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Abdullah Al Zabir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: a fixed identity column on the left like a field notebook cover, a long reading column on the right.
+   Palette is oxblood red on a pale blush ground, with the red doing all the work in the name, the author's own byline and the active states. */
+:root {
+  --bg: #f8f2f1;
+  --surface: #efe3e2;
+  --ink: #2a1215;
+  --ink-soft: #6b4a4e;
+  --rule: #dcc7c6;
+  --accent: #8b1a2b;
+  --grain: #8b1a2b;
+  --grain-bg: #f2d9d9;
+  --band: #5c0f1c;
+  --band-ink: #f8e8e8;
+  --font-display: "Literata", Georgia, "Times New Roman", serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  --font-ui: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a0d10;
+    --surface: #26141a;
+    --ink: #f3e4e4;
+    --ink-soft: #bf9fa3;
+    --rule: #3f2328;
+    --accent: #e8808c;
+    --grain: #e8808c;
+    --grain-bg: #43191f;
+    --band: #330a11;
+    --band-ink: #f3dede;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a0d10;
+  --surface: #26141a;
+  --ink: #f3e4e4;
+  --ink-soft: #bf9fa3;
+  --rule: #3f2328;
+  --accent: #e8808c;
+  --grain: #e8808c;
+  --grain-bg: #43191f;
+  --band: #330a11;
+  --band-ink: #f3dede;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  padding-inline: 20px;
+  padding-block: 32px 64px;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* Quote header */
+.top {
+  background: var(--band);
+  color: var(--band-ink);
+  margin: -32px -20px 40px;
+  padding: 20px;
+}
+.top-in {
+  max-width: 1080px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+.quote { margin: 0; min-width: 0; flex: 1 1 420px; transition: opacity 0.35s; }
+.quote.fade { opacity: 0; }
+.quote blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.35;
+  max-width: 64ch;
+  min-height: 1.35em;
+}
+@media (max-width: 720px) {
+  .quote blockquote { min-height: 2.7em; }
+}
+.quote figcaption {
+  margin-top: 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.q-next {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+  color: var(--band-ink);
+  border: 1px solid currentColor;
+  padding: 6px 14px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.q-next:hover { opacity: 1; }
+.q-next:focus-visible { outline: 2px solid var(--band-ink); outline-offset: 3px; }
+
+.page {
+  max-width: 1080px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+/* Identity column */
+.id {
+  border-top: 8px solid var(--accent);
+  padding-top: 24px;
+  position: sticky;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+.avatar {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 24%;
+  border: 1px solid var(--rule);
+  border-bottom: 4px solid var(--accent);
+  background: var(--surface);
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+  color: var(--accent);
+}
+.role {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 8px 0 0;
+}
+.affil {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.affil span { display: block; color: var(--ink-soft); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+nav.toc {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+nav.toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 4px 0 4px 12px;
+  border-left: 2px solid transparent;
+}
+nav.toc a:hover, nav.toc a.on { color: var(--ink); border-left-color: var(--grain); }
+.theme-btn {
+  align-self: flex-start;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: none;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.theme-btn:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+/* Social icons */
+.social { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.soc {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  text-decoration: none;
+}
+.soc svg { width: 22px; height: 22px; display: block; }
+.soc text { font-family: var(--font-ui); font-weight: 700; }
+.soc:hover { background: var(--accent); color: var(--bg); }
+
+.themes { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+.theme { display: flex; flex-direction: column; gap: 4px; padding-left: 16px; border-left: 3px solid var(--rule); }
+.theme h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 18px; line-height: 1.35; }
+.theme p { font-size: 16px; color: var(--ink-soft); }
+
+/* Closing contact band */
+.closing {
+  background: var(--band);
+  color: var(--band-ink);
+  padding: 36px 32px;
+  gap: 18px;
+}
+.closing-kicker {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.closing-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.3;
+  max-width: 28ch;
+  text-wrap: balance;
+}
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.mail code {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+.copy {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--band-ink);
+  color: var(--band);
+  border: 1px solid var(--band-ink);
+  padding: 7px 14px;
+  cursor: pointer;
+}
+.copy:hover { opacity: 0.88; }
+.copy:focus-visible { outline: 2px solid var(--band-ink); outline-offset: 3px; }
+.closing-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.closing-links a {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--band-ink);
+  text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--band-ink) 45%, transparent);
+  padding: 6px 14px;
+}
+.closing-links a:hover { background: var(--band-ink); color: var(--band); }
+
+/* Reading column */
+main { display: flex; flex-direction: column; gap: 56px; min-width: 0; }
+section { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 24px; }
+h2 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+p { margin: 0; max-width: 65ch; }
+.lede { font-size: 21px; line-height: 1.55; max-width: 58ch; text-wrap: pretty; }
+
+.demo-note {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  background: var(--grain-bg);
+  border: 1px solid var(--grain);
+  padding: 10px 14px;
+  max-width: none;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  padding: 4px 12px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.tags.mono li { font-family: var(--font-mono); font-size: 13px; }
+
+.edu { display: flex; flex-direction: column; gap: 16px; list-style: none; margin: 0; padding: 0; }
+.edu li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; }
+.edu b { font-weight: 600; }
+.edu span { font-family: var(--font-ui); font-size: 14px; color: var(--ink-soft); }
+
+/* Publications */
+.year-block { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px; padding-top: 8px; }
+.year {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--ink-soft);
+  padding-top: 2px;
+}
+.pubs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.pub { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.pub .t { font-weight: 600; line-height: 1.4; text-wrap: pretty; }
+.pub .a { font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+.pub .a em { font-style: normal; color: var(--grain); font-weight: 600; }
+.pub .v { font-size: 15px; font-style: italic; }
+.meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-family: var(--font-ui); font-size: 13px; margin-top: 2px; }
+.badge {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+.badge.first { border-color: var(--grain); color: var(--grain); }
+.badge.press { background: var(--grain-bg); border-color: var(--grain); color: var(--ink); }
+
+.talk { display: flex; flex-direction: column; gap: 4px; }
+.talk .t { font-weight: 600; }
+.talk .d { font-family: var(--font-ui); font-size: 14px; color: var(--ink-soft); }
+
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
+.contact li { border: 1px solid var(--rule); padding: 12px 14px; font-family: var(--font-ui); font-size: 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.contact span { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.contact code { font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); overflow-wrap: anywhere; }
+
+footer { font-family: var(--font-ui); font-size: 13px; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; }
+
+@media (max-width: 860px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .id { position: static; }
+  nav.toc { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; }
+  nav.toc a { padding: 4px 0; border-left: none; border-bottom: 2px solid transparent; }
+  nav.toc a:hover, nav.toc a.on { border-bottom-color: var(--grain); }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .lede { font-size: 19px; }
+  .year-block { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a, nav.toc a, .theme-btn { transition: color 0.15s, border-color 0.15s; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <figure class="quote" id="quote">
+      <blockquote id="q-text">All models are wrong, but some are useful.</blockquote>
+      <figcaption id="q-by">George E. P. Box</figcaption>
+    </figure>
+    <button class="q-next" id="q-next" type="button">Next quote</button>
+  </div>
+</header>
+
+<div class="page">
+  <aside class="id">
+    <img class="avatar" src="assets/portrait.jpg" alt="Portrait of Abdullah Al Zabir" width="560" height="700">
+    <div>
+      <h1 class="name">Abdullah Al Zabir</h1>
+      <p class="role">PhD researcher in Agribusiness Management</p>
+    </div>
+    <ul class="affil">
+      <li><span>Studying at</span>Asian Institute of Technology, Thailand</li>
+      <li><span>Fellowship</span>World Bank PARTNER Fellow</li>
+      <li><span>Working at</span>Assistant Director, Bangladesh Agricultural Development Corporation (BADC)</li>
+    </ul>
+    <ul class="social" aria-label="Profiles">
+      <li><a class="soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="16.5" text-anchor="middle" font-size="12" fill="currentColor">in</text></svg></a></li>
+      <li><a class="soc" href="https://www.researchgate.net/profile/Abdullah-Al-Zabir" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="16" text-anchor="middle" font-size="10.5" fill="currentColor">RG</text></svg></a></li>
+      <li><a class="soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-size="16" fill="currentColor">f</text></svg></a></li>
+      <li><a class="soc" href="https://www.youtube.com/@ZabirsOdyssey" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z" fill="currentColor"/></svg></a></li>
+    </ul>
+    <nav class="toc" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#tools">Tools</a>
+      <a href="#methods">Methods</a>
+      <a href="#publications">Publications</a>
+      <a href="#book">Book</a>
+      <a href="#talks">Talks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn" id="theme" type="button">Switch theme</button>
+  </aside>
+
+  <main>
+    <section id="about">
+      <p class="lede">I study how smallholder farmers decide, adapt and respond to risk, and I use econometrics and explainable machine learning to turn survey data into evidence that agricultural agencies can act on.</p>
+      <p>My work sits between agricultural economics, behavioral modeling and applied data science. I am a PhD researcher at the Asian Institute of Technology, supported by the World Bank PARTNER Fellowship, and I work as an Assistant Director at the Bangladesh Agricultural Development Corporation, where I joined in 2022.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="edu">
+        <li><b>PhD, Agribusiness Management</b><span>Asian Institute of Technology, Thailand. Supervisor Dr. Muhammad Yaseen. In progress.</span></li>
+        <li><b>MSc, Agricultural Statistics</b><span>Sylhet Agricultural University, Bangladesh</span></li>
+        <li><b>BSc, Agricultural Economics</b><span>Sylhet Agricultural University, Bangladesh</span></li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <div class="themes">
+        <div class="theme">
+          <h3>Farmer behavior and technology adoption</h3>
+          <p>I ask why farmers adopt a practice, how far they take it and whether they stay satisfied. I pair econometric models such as Double Hurdle and PLS-SEM with explainable machine learning, so results show both the size of an effect and the reason behind it.</p>
+        </div>
+        <div class="theme">
+          <h3>Climate adaptation and livelihood vulnerability</h3>
+          <p>Much of this work is in the haor wetlands and coastal belt of Bangladesh, where floods, cyclones and erosion shape what households can do. I study how communities adapt and which households stay most exposed.</p>
+        </div>
+        <div class="theme">
+          <h3>Food security and the everyday environment</h3>
+          <p>This strand covers food security among women informal workers in Khulna, household willingness to pay for cleaner urban air, and the psychology behind low carbon digital habits among university students.</p>
+        </div>
+        <div class="theme">
+          <h3>Prices, trade and productivity</h3>
+          <p>My newer work looks at rice price shocks and structural breaks, the role of trade openness, and agricultural productivity across South Asia and Sub-Saharan Africa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <h2>Tools</h2>
+      <ul class="tags mono">
+        <li>R</li>
+        <li>Python</li>
+        <li>STATA</li>
+        <li>SPSS</li>
+        <li>Jamovi</li>
+      </ul>
+    </section>
+
+    <section id="methods">
+      <h2>Methods</h2>
+      <ul class="tags mono">
+        <li>Double Hurdle</li>
+        <li>PLS-SEM</li>
+        <li>Probit / Logit</li>
+        <li>Multivariate Probit</li>
+        <li>Multinomial Logit</li>
+        <li>Negative Binomial</li>
+        <li>Poisson regression</li>
+        <li>Binomial regression</li>
+        <li>Endogenous Switching Regression</li>
+        <li>Meta-Stochastic Frontier</li>
+        <li>Panel econometrics</li>
+        <li>Change-point detection (PELT)</li>
+        <li>XGBoost</li>
+        <li>SHAP</li>
+        <li>SARIMA</li>
+        <li>Prophet</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="year-block">
+        <div class="year">2026</div>
+        <ul class="pubs">
+          <li class="pub">
+            <span class="t">Household livelihood vulnerability in climate-sensitive wetland communities of North-Eastern Bangladesh</span>
+            <span class="a"><em>Zabir, A. A.</em>, Baten, M. A., Alam, M., &amp; Wongnaa, C. A.</span>
+            <span class="v">Sustainability Analytics and Modeling, 6, 100062</span>
+            <span class="meta"><span class="badge first">First author</span><a href="https://doi.org/10.1016/j.samod.2026.100062" target="_blank" rel="noopener">DOI</a></span>
+          </li>
+          <li class="pub">
+            <span class="t">Psychological determinants of low carbon digital behavior among university students in Bangladesh</span>
+            <span class="a">Ahmed, T., Arpa, N. J., &amp; <em>Zabir, A. A.</em></span>
+            <span class="v">Discover Psychology</span>
+            <span class="meta"><a href="https://doi.org/10.1007/s44202-026-00918-x" target="_blank" rel="noopener">DOI</a></span>
+          </li>
+          <li class="pub">
+            <span class="t">Determinants of household willingness to pay for improved urban air quality, evidence from Khulna City, Bangladesh</span>
+            <span class="a">Ahmed, T., Arpa, N. J., &amp; <em>Zabir, A. A.</em></span>
+            <span class="v">Natural Built Social Environment Health, 2(2), 173-199</span>
+            <span class="meta"><a href="https://doi.org/10.63095/NBSEH.26.553041" target="_blank" rel="noopener">DOI</a></span>
+          </li>
+          <li class="pub">
+            <span class="t">Food security and its determinants among women informal workers in Khulna City Corporation, Bangladesh</span>
+            <span class="a">Urmi, S. A., <em>Zabir, A. A.</em>, Ratul, S. H. M., Antor, S. S. C., &amp; Hossain, S.</span>
+            <span class="v">Thai Journal of Public Health, 56(2)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="year-block">
+        <div class="year">2025</div>
+        <ul class="pubs">
+          <li class="pub">
+            <span class="t">Community driven climate change adaptation strategies in ephemeral wetlands of northeastern Bangladesh</span>
+            <span class="a">Baten, M. A., <em>Al Zabir, A.</em>, Hossain, M. M., et al.</span>
+            <span class="v">Discover Environment, 3, 176</span>
+            <span class="meta"><span class="badge first">Co-first author</span><a href="https://doi.org/10.1007/s44274-025-00357-w" target="_blank" rel="noopener">DOI</a></span>
+          </li>
+          <li class="pub">
+            <span class="t">Fishers' responses to tropical cyclones in coastal Bangladesh</span>
+            <span class="a">Islam, M. M., Hossain, M. M., Mitu, S. J., Herbeck, J., Mozumder, M. M. H., Schneider, P., <em>Zabir, A. A.</em>, Shamsuzzaman, M. M., &amp; Jentoft, S.</span>
+            <span class="meta"><a href="https://doi.org/10.1016/j.pdisas.2025.100423" target="_blank" rel="noopener">DOI</a></span>
+          </li>
+          <li class="pub">
+            <span class="t">Impact of Covid-19 stress on urban poor in Sylhet Division, Bangladesh, a perception-based assessment</span>
+            <span class="a">Baten, M. A., &amp; <em>Zabir, A. A.</em></span>
+            <span class="v">Open Health, 6(1), 20250066</span>
+            <span class="meta"><a href="https://doi.org/10.1515/ohe-2025-0066" target="_blank" rel="noopener">DOI</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="year-block">
+        <div class="year">2022</div>
+        <ul class="pubs">
+          <li class="pub">
+            <span class="t">Impact of information and communication technology on the secondary schools' efficiency in Barisal Division of Bangladesh, teachers' preference and perceptions</span>
+            <span class="a">Baten, M. A., Hossain, M. K., &amp; <em>Zabir, A. A.</em></span>
+            <span class="v">The Eurasia Proceedings of Science, Technology, Engineering &amp; Mathematics, 19, 108-119</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="year-block">
+        <div class="year">2017</div>
+        <ul class="pubs">
+          <li class="pub">
+            <span class="t">Value chain analysis of small scale dry fish species in haor area of Sunamganj District, Bangladesh</span>
+            <span class="a">Mozahid, M. N., Ahmed, J. U., Mannaf, M., &amp; <em>Zabir, A. A.</em></span>
+            <span class="v">British Journal of Economics, Management &amp; Trade, 16(4), 1-15</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="book">
+      <h2>Book</h2>
+      <div class="talk">
+        <span class="t">Gobeshona 101 (Research 101)</span>
+        <span class="d">Darikoma Prokashoni. Research in simple language, written for new students and early researchers.</span>
+        <p>A beginner's guide that explains research from the first question to the final analysis. It uses plain language and a simple story, so new students can start without feeling that research belongs only to senior scholars.</p>
+        <span class="d"><a href="https://www.rokomari.com/book/510625/gobeshona-101" target="_blank" rel="noopener">Get it on Rokomari</a></span>
+      </div>
+    </section>
+
+    <section id="talks">
+      <h2>Talks</h2>
+      <div class="talk">
+        <span class="t">AI governance from a youth perspective</span>
+        <span class="d">5th NIC-NIDA Conference 2026, Youth Voices session, NIDA, Bangkok</span>
+      </div>
+    </section>
+
+    <section id="contact" class="closing">
+      <p class="closing-kicker">Contact</p>
+      <p class="closing-line">Questions, collaborations and invitations are welcome.</p>
+      <div class="mail">
+        <code id="mail-addr">zabir.badc@gmail.com</code>
+        <button class="copy" id="copy" type="button">Copy email</button>
+      </div>
+      <ul class="closing-links">
+        <li><a href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.researchgate.net/profile/Abdullah-Al-Zabir" target="_blank" rel="noopener">ResearchGate</a></li>
+        <li><a href="https://www.youtube.com/@ZabirsOdyssey" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </section>
+
+    <footer>&copy; 2026 Abdullah Al Zabir</footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('theme');
+  btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme');
+    if (!cur) cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  });
+
+  var quotes = [
+    ['All models are wrong, but some are useful.', 'George E. P. Box'],
+    ['The first principle is that you must not fool yourself.', 'Richard P. Feynman'],
+    ['Agriculture is our wisest pursuit.', 'Thomas Jefferson'],
+    ['Science is built up of facts, as a house is built of stones.', 'Henri Poincaré'],
+    ['Chance favors only the prepared mind.', 'Louis Pasteur']
+  ];
+  var qi = 0, box = document.getElementById('quote'), qt = document.getElementById('q-text'), qb = document.getElementById('q-by');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function nextQuote() {
+    qi = (qi + 1) % quotes.length;
+    box.classList.add('fade');
+    setTimeout(function () {
+      qt.textContent = quotes[qi][0];
+      qb.textContent = quotes[qi][1];
+      box.classList.remove('fade');
+    }, reduce ? 0 : 350);
+  }
+  var timer = null;
+  function start() { if (!reduce && !timer) timer = setInterval(nextQuote, 9000); }
+  function stop() { clearInterval(timer); timer = null; }
+  document.getElementById('q-next').addEventListener('click', function () { stop(); nextQuote(); start(); });
+  box.addEventListener('mouseenter', stop);
+  box.addEventListener('mouseleave', start);
+  start();
+
+  var copyBtn = document.getElementById('copy');
+  copyBtn.addEventListener('click', function () {
+    var el = document.getElementById('mail-addr');
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    }
+    function done(t) { copyBtn.textContent = t; setTimeout(function () { copyBtn.textContent = 'Copy email'; }, 1800); }
+    try {
+      navigator.clipboard.writeText(el.textContent).then(function () { done('Copied'); }, function () { selectIt(); done('Press Ctrl+C'); });
+    } catch (e) { selectIt(); done('Press Ctrl+C'); }
+  });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function mark() {
+    var y = window.scrollY + 120, idx = 0;
+    sections.forEach(function (s, i) { if (s && s.offsetTop <= y) idx = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === idx); });
+  }
+  window.addEventListener('scroll', mark, { passive: true });
+  mark();
+})();
+</script>
+</body>
+</html>
